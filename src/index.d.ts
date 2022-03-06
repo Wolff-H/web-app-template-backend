@@ -1,0 +1,1 @@
+declare const sslogger: import("./common/sslogger").Sslogger

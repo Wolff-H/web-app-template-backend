@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "ts-node ./src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node --loader ts-node/esm --experimental-specifier-resolution=node ./src/main.ts",
+    "serve:bundle": "node ../backend-dist-dev/schedule.bundle.js",
+    "build": "webpack --config webpack.config.prod.js",
+    "build:watch": "webpack --config webpack.config.dev.js --watch",
+    "serve:watch": "nodemon ../backend-dist-dev/schedule.bundle.js"
+  },
+  "module": "ESNext",
+  "author": "wolff",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.13.4",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
+    "md5": "^2.3.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.2.4",
+    "mongoose-sequence": "^5.3.1",
+    "ts-node": "^10.7.0"
+  },
+  "type": "module",
+  "_moduleAliases": {
+    "@": "./src"
+  },
+  "imports": {
+    "@/*": "./src/*.ts"
+  },
+  "devDependencies": {
+    "@types/koa-bodyparser": "^4.3.6",
+    "@types/koa-router": "^7.4.4",
+    "@types/md5": "^2.3.2",
+    "nodemon": "^2.0.15",
+    "ts-loader": "^9.2.7",
+    "tsconfig-paths": "^3.13.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "webpack-cli": "^4.9.2"
+  }
+}
