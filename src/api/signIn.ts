@@ -3,12 +3,12 @@ import { constructResponse } from "@/common/response-utils"
 import { CollectionUser, model_user } from "../collection-definitions/user"
 import { model_tokens } from "../collection-definitions/tokens"
 
-import { PREPATH } from "../config/environment"
+import ENV from "../config/environment"
 import generateUserToken from "@/common/auth-utils/tokens/user-token"
 
 /**********************************************************************************************************************/
 
-const router = new KoaRouter().post(`${PREPATH}/signIn`, async (ctx) => {
+const router = new KoaRouter().post(`${ENV.api_path}/signIn`, async (ctx) => {
     // 准备数据 //
     const request_data = ctx.request.body
     const { email, password, if_remember_me } = request_data
